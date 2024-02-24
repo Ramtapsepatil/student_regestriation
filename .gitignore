@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/wwwroot/lib/bootstrap/dist
+/.vs/studentregestration/FileContentIndex
+/wwwroot/lib/jquery
+/obj/Debug/net6.0
+/.vs
+/wwwroot/lib/jquery-validation
