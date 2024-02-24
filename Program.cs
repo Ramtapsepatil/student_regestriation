@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,12 +14,12 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
+//builder.Services.AddControllers.AddNewtonsoftJson(Options=>Options.serializersettings.referenceLoopHandling=Newtonsoft.Json.referenceLoopHandling.Ignore).AddNewtons opt
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+//app.UseSwagger(c => c.RouteTemplate = Constants.SWAGGER_URL_PREFIX + "/{documentName}/swagger.json");
 app.UseAuthorization();
 
 app.MapRazorPages();
