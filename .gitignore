@@ -8,3 +8,5 @@
 /obj/Debug/net6.0
 /.vs
 /wwwroot/lib/jquery-validation
+/bin/Debug/net6.0/ikvm/linux-arm/bin
+/obj
