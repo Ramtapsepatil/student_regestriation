@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
 
-function App() {
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Login from './Login';
+import MasterPage from './MasterPage';
+import StudentPage from './StudentPage';
+import ClassPage from './ClassPage';
+
+const App = () => {
+  const token = localStorage.getItem('token');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          {token ? <MasterPage /> : <Login />}
+        </Route>
+        <Route path="/login" component={Login} />
+        <Route path="/master" component={MasterPage} />
+        <Route path="/students" component={StudentPage} />
+        <Route path="/classes" component={ClassPage} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
